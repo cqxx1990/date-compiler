@@ -1,6 +1,6 @@
 {
   "name": "date-compiler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "快捷解析当前日期下的各种日期",
   "main": "es/index.ts",
   "module": "es/index.js",
@@ -8,7 +8,7 @@
   "types": "es/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "rm -rf ./es && tsc"
   },
   "files": [
     "es"

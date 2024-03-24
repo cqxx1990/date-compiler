@@ -7,7 +7,12 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 dayjs.extend(weekOfYear);
 import { parse } from "./parse";
 
-/**根据当前时间算出表达式的时间 */
+/**
+ * 根据当前时间算出表达式的时间
+ * @param express 日期表达式，如 -2d-$s-$m-$h
+ * @param base 基础日期，默认为当前时间
+ * @returns 
+ */
 export function execute(express: string, base?: dayjs.Dayjs) {
   const list = parse(express);
   let ret = base || dayjs();

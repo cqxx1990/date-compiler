@@ -1,7 +1,12 @@
 import moment from "moment";
 import { parse } from "./parse";
 
-/**根据当前时间算出表达式的时间 */
+/**
+ * 根据当前时间算出表达式的时间
+ * @param express 日期表达式，如 -2d-$s-$m-$h
+ * @param base 基础日期，默认为当前时间
+ * @returns 
+ */
 export function execute(express: string, base?: moment.Moment) {
   const list = parse(express);
   const ret = base || moment();

@@ -1,3 +1,4 @@
+/**当前时间操作符 */
 export type DynamicAction =
   | "$s"
   | "$m"

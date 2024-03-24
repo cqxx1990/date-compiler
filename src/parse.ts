@@ -8,6 +8,11 @@ const TOKEN_EXP = new RegExp(
   "g"
 );
 
+/**
+ * 将表达式解析为操作序列
+ * @param express 表达式
+ * @returns ParseResultItem[]
+ */
 export function parse(express: string) {
   if (typeof express !== "string") {
     return [];
