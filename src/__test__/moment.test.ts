@@ -5,6 +5,12 @@ test("moment,空值", () => {
   const now = moment();
   expect(execute("").format("YYYYMMDD")).toBe(now.format("YYYYMMDD"));
 });
+test("moment,原始值格式YYYY-MM-DD", () => {
+  expect(execute("2024-01-01").format("YYYYMMDD")).toBe("20240101");
+});
+test("moment,原始值格式YYYYMMDD", () => {
+  expect(execute("20240101").format("YYYYMMDD")).toBe("20240101");
+});
 test("moment,昨天", () => {
   expect(execute("-1d", moment("2024-01-02")).format("YYYY-MM-DD")).toBe(
     "2024-01-01"

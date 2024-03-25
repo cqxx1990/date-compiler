@@ -5,6 +5,12 @@ test("dayjs,空值", () => {
   const now = dayjs();
   expect(execute("").format("YYYYMMDD")).toBe(now.format("YYYYMMDD"));
 });
+test("dayjs,原始值格式YYYY-MM-DD", () => {
+  expect(execute("2024-01-01").format("YYYYMMDD")).toBe("20240101");
+});
+test("dayjs,原始值格式YYYYMMDD", () => {
+  expect(execute("20240101").format("YYYYMMDD")).toBe("20240101");
+});
 test("dayjs,昨天", () => {
   expect(execute("-1d", dayjs("2024-01-02")).format("YYYY-MM-DD")).toBe(
     "2024-01-01"

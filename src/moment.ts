@@ -5,11 +5,15 @@ import { parse } from "./parse";
  * 根据当前时间算出表达式的时间
  * @param express 日期表达式，如 -2d-$s-$m-$h
  * @param base 基础日期，默认为当前时间
- * @returns 
+ * @returns
  */
 export function execute(express: string, base?: moment.Moment) {
   const list = parse(express);
-  const ret = base || moment();
+  // 如果表达式有长度，但是解析结果没有，则传入表达式
+  let ret =
+    base ||
+    moment(express.length > 0 && list.length === 0 ? express : undefined);
+    
   list.forEach((item) => {
     let value = 0;
     let unit: moment.DurationInputArg2 = "d";

@@ -1,6 +1,6 @@
 {
   "name": "date-compiler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "快捷解析当前日期下的各种日期",
   "main": "es/index.ts",
   "module": "es/index.js",
