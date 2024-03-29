@@ -13,7 +13,7 @@ export function execute(express: string, base?: moment.Moment) {
   let ret =
     base ||
     moment(express.length > 0 && list.length === 0 ? express : undefined);
-    
+
   list.forEach((item) => {
     let value = 0;
     let unit: moment.DurationInputArg2 = "d";
@@ -64,4 +64,12 @@ export function execute(express: string, base?: moment.Moment) {
     }
   });
   return ret;
+}
+/** 解析时间范围*/
+export function parseRange(
+  express: string,
+  unit: moment.unitOfTime.Diff = "d"
+) {
+  const base = execute(express);
+  return base.diff(moment(), unit);
 }

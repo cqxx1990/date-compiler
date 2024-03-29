@@ -1,4 +1,4 @@
-import { execute } from "../moment";
+import { execute, parseRange } from "../moment";
 import moment from "moment";
 
 test("moment,空值", () => {
@@ -49,4 +49,10 @@ test("moment,本周周日", () => {
 });
 test("moment,本年第一个周六", () => {
   expect(execute("-$w-$d+5d",moment("2024-03-24")).format("YYYYMMDD")).toBe("20240106");
+});
+test("dayjs,解析日期范围：1天", () => {
+  expect(parseRange("-1d")).toBe(-1);
+});
+test("dayjs,解析日期范围：1月2周", () => {
+  expect(parseRange("2w","w")).toBe(2);
 });

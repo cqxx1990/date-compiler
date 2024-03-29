@@ -1,4 +1,4 @@
-import dayjs, { ManipulateType } from "dayjs";
+import dayjs, { ManipulateType, OpUnitType, UnitType } from "dayjs";
 import isoWeek from "dayjs/plugin/isoWeek";
 dayjs.extend(isoWeek);
 import dayOfYear from "dayjs/plugin/dayOfYear";
@@ -75,4 +75,13 @@ export function execute(express: string, base?: dayjs.Dayjs) {
     }
   });
   return ret;
+}
+
+/** 解析时间范围*/
+export function parseRange(
+  express: string,
+  unit: UnitType | OpUnitType='d'
+) {
+  const base = execute(express);
+  return base.diff(dayjs(), unit);
 }

@@ -1,4 +1,4 @@
-import { execute } from "../dayjs";
+import { execute, parseRange } from "../dayjs";
 import dayjs from "dayjs";
 
 test("dayjs,空值", () => {
@@ -49,4 +49,10 @@ test("dayjs,本周周日", () => {
 });
 test("dayjs,本年第一个周六", () => {
   expect(execute("-$w-$d+5d",dayjs("2024-03-24")).format("YYYYMMDD")).toBe("20240106");
+});
+test("dayjs,解析日期范围：1天", () => {
+  expect(parseRange("-1d")).toBe(-1);
+});
+test("dayjs,解析日期范围：1月2周", () => {
+  expect(parseRange("2w","w")).toBe(2);
 });

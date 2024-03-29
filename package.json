@@ -1,6 +1,6 @@
 {
   "name": "date-compiler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "快捷解析当前日期下的各种日期",
   "main": "es/index.ts",
   "module": "es/index.js",
@@ -8,7 +8,8 @@
   "types": "es/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf ./es && tsc"
+    "build": "rm -rf ./es && tsc",
+    "deploy": "npm publish --registry=https://registry.npmjs.org/"
   },
   "files": [
     "es"
